@@ -1,0 +1,124 @@
+/* global.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(to bottom, #0b0c10, #1f2833);
+  color: #c5c6c7;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #66fcf1;
+  text-shadow: 0 0 10px #45a29e;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #c5c6c7;
+  margin-top: 10px;
+}
+
+section#missions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* home.css */
+
+.mission {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #45a29e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(102, 252, 241, 0.6);
+}
+
+.mission h2 {
+  font-size: 1.8rem;
+  color: #66fcf1;
+  margin-bottom: 10px;
+}
+
+.mission p {
+  font-size: 1rem;
+  color: #c5c6c7;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #45a29e;
+  color: #0b0c10;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #66fcf1;
+  color: #0b0c10;
+}
+
+#actions button {
+  background: #45a29e;
+  color: #0b0c10;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px 0 0;
+  transition: background 0.3s;
+}
+
+#actions button:hover {
+  background: #66fcf1;
+  color: #0b0c10;
+}
+
+.dialogue-container button {
+  background: #45a29e;
+  color: #0b0c10;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px 0 0;
+  transition: background 0.3s;
+}
+
+.dialogue-container button:hover {
+  background: #66fcf1;
+  color: #0b0c10;
+}
+
+main {
+  text-align: center;
+}
+
+main button {
+  margin-top: 20px;
+}

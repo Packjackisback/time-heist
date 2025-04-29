@@ -1,0 +1,260 @@
+[
+  {
+    "id": "mongol-invasions",
+    "name": "The Mongol Invasions (1206-1368) Social",
+    "briefing": "The Mongol Empire, led by Genghis Khan, spanned across asia and europe, becoming the largest connect3ed empire in history, but throughout these massive conquests significant distruction was caused. Use Ibn Battuta's knowledge of Islam's culture to mediate negotiations with the Mongol empire.",
+    "objectives": [
+      {
+        "id": "stop-destruction",
+        "description": "Negotiate with the Mongol leaders to save Baghdad.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "Why was Baghdad a key cultural center during the Islamic Golden Age?",
+          "choices": [
+            "It was the capital of the Mongol Empire.",
+            "It housed the House of Wisdom and numerous scholars.",
+            "It was a major trade hub for the European Renaissance.",
+            "It was the birthplace of Genghis Khan."
+          ],
+          "correctAnswer": 1
+        }
+      },
+      {
+        "id": "secure-trade",
+        "description": "Secure trade agreements with Mongol leaders.",
+        "action": "intel-gathering",
+        "parameters": {
+          "type": "search",
+          "difficulty": "medium"
+        }
+      },
+      {
+        "id": "protect-scholars",
+        "description": "Ensure the safety of scholars and artifacts in Baghdad.",
+        "action": "rescue",
+        "parameters": {
+          "type": "stealth",
+          "difficulty": "hard"
+        }
+      }
+    ]
+  },
+  {
+    "id": "atlantic-slave-trade",
+    "name": "The Atlantic Slave Trade (1500s-1800s) Economic",
+    "briefing": "The transatlantic slave trade forced millions of Africans overseas, leading to suffering and inequality. Help Olaudah Equiano intercept early Portuguese expeditions to Africa to prevent the establishment of the slave trade, reducing the systemic racism that is still felt today.",
+    "objectives": [
+      {
+        "id": "stop-expeditions",
+        "description": "Intercept Portuguese expeditions to Africa and introduce alternative labor systems.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What was the primary motive behind the Atlantic Slave Trade?",
+          "choices": [
+            "To spread European religion in Africa.",
+            "To secure cheap labor for plantations in the Americas.",
+            "To establish alliances with African kingdoms.",
+            "To develop industrial economies in Africa."
+          ],
+          "correctAnswer": 1
+        }      
+      },
+      {
+        "id": "expose-horrors",
+        "description": "Expose the inhumane conditions of the slave trade to European leaders.",
+        "action": "intel-gathering",
+        "parameters": {
+          "type": "investigation",
+          "difficulty": "medium"
+        }
+      },
+      {
+        "id": "free-captives",
+        "description": "Free captives from slave ships and return them to safety.",
+        "action": "rescue",
+        "parameters": {
+          "type": "stealth",
+          "difficulty": "hard"
+        }
+      }
+    ]
+  },
+  {
+    "id": "industrial-revolution",
+    "name": "The Industrial Revolution (1760-1840) Environmental",
+    "briefing": "While the industrial revolution may have transformed production and society, it has created great and almost irreperable environmental damage and soical inequality. Help James Watt in introducing renewable energy technologies to create a healthier planet for future generations",
+    "objectives": [
+      {
+        "id": "promote-renewables",
+        "description": "Introduce renewable energy technologies to industrialists.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What was the biggest effect of the Industrial Revolution?",
+          "choices": [
+            "Global deforestation.",
+            "The widespread use of coal and fossil fuels.",
+            "The extinction of several species.",
+            "The invention of nuclear power."
+          ],
+          "correctAnswer": 1
+        }
+      },
+      {
+        "id": "improve-conditions",
+        "description": "Advocate for better working conditions in factories.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What was a common issue faced by factory workers during the Industrial Revolution?",
+          "choices": [
+            "Overpopulation in rural areas.",
+            "Excessive wages and benefits.",
+            "Poor working conditions and long hours.",
+            "The inability to find jobs."
+          ],
+          "correctAnswer": 2
+        }
+      },
+      {
+        "id": "reduce-pollution",
+        "description": "Develop strategies to reduce industrial pollution.",
+        "action": "intel-gathering",
+        "parameters": {
+          "type": "search",
+          "difficulty": "hard"
+        }
+      }
+    ]
+  },
+  {
+    "id": "civil-rights-movement",
+    "name": "The Civil Rights Movement (1954-1968) Political",
+    "briefing": "The Civil Rights movement fought against the deep seated racism in America, attempting to allow suffrage for African Americans. Help Malcolm X to fight against the racism destroying the country. ",
+    "objectives": [
+      {
+        "id": "protect-mlk",
+        "description": "Prevent Martin Luther King Jr.'s assassination in 1968.",
+        "action": "rescue",
+        "parameters": {
+          "type": "stealth",
+          "difficulty": "hard"
+        }
+      },
+      {
+        "id": "spread-awareness",
+        "description": "Spread awareness about systemic racism and its impacts.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What was a key goal of the Civil Rights Movement?",
+          "choices": [
+            "To overthrow the U.S. government.",
+            "To end racial segregation and discrimination.",
+            "To establish a new political party.",
+            "To promote industrial development in the South."
+          ],
+          "correctAnswer": 1
+        }
+      },
+      {
+        "id": "support-legislation",
+        "description": "Support the passing of landmark civil rights legislation.",
+        "action": "intel-gathering",
+        "parameters": {
+          "type": "research",
+          "difficulty": "medium"
+        }
+      }
+    ]  
+  },
+  {
+    "id": "fall-of-constantinople",
+    "name": "The Fall of Constantinople (1453) Political",
+    "briefing": "The fall of Constantinople marked the end of the Byzantine Empire and the rise of the Ottoman Empire, but it also led to economic disruptions and the Age of Exploration. Help Leonardo da Vinci design innovative defenses to delay the city's fall and preserve it as a multicultural trade hub.",
+    "objectives": [
+      {
+        "id": "defend-city",
+        "description": "Help design innovative defenses to protect Constantinople.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What was one of the key reasons for the fall of Constantinople?",
+          "choices": [
+            "The Byzantines betrayed the Ottomans.",
+            "The Ottomans used advanced cannon technology to breach the walls.",
+            "The city was abandoned by its citizens.",
+            "The Byzantines allied with the Mongols."
+          ],
+          "correctAnswer": 1
+        }
+      },
+      {
+        "id": "secure-resources",
+        "description": "Secure critical resources to aid Constantinople's defenders.",
+        "action": "intel-gathering",
+        "parameters": {
+          "type": "search",
+          "difficulty": "medium"
+        }
+      },
+      {
+        "id": "negotiate-peace",
+        "description": "Negotiate a peace treaty between the Byzantines and Ottomans.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What could have been a potential solution to prevent the fall of Constantinople?",
+          "choices": [
+            "Reinforcements from Western Europe.",
+            "Allowing the Ottomans to rule the city temporarily.",
+            "Burning Constantinople to the ground.",
+            "Evacuating the city's inhabitants."
+          ],
+          "correctAnswer": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "meiji-restoration",
+    "name": "The Meiji Restoration (1868-1912) Economic",
+    "briefing": "The Meiji Restoration transformed Japan into a modern industrial nation, but it left significant social inequalities. Help Fukuzawa Yukichi implement equitable social reforms alongside economic modernization.",
+    "objectives": [
+      {
+        "id": "modernize-industry",
+        "description": "Introduce modern industrial practices to Japan.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What was one of the main goals of the Meiji Restoration?",
+          "choices": [
+            "To overthrow Emperor Meiji.",
+            "To industrialize Japan and compete with Western powers.",
+            "To isolate Japan from foreign influence.",
+            "To expand Japan's empire into Europe."
+          ],
+          "correctAnswer": 1
+        }
+      },
+      {
+        "id": "improve-labor-rights",
+        "description": "Advocate for better labor protections during industrialization.",
+        "action": "dialogue",
+        "dialogue": {
+          "prompt": "What was a common issue faced by workers during the Meiji Restoration?",
+          "choices": [
+            "Overpopulation in rural areas.",
+            "Inadequate wages and unsafe working conditions.",
+            "Excessive government intervention in the workforce.",
+            "The inability to find employment in cities."
+          ],
+          "correctAnswer": 1
+        }
+      },
+      {
+        "id": "promote-education",
+        "description": "Promote widespread education to support modernization.",
+        "action": "intel-gathering",
+        "parameters": {
+          "type": "research",
+          "difficulty": "medium"
+        }
+      }
+    ]
+  }
+]

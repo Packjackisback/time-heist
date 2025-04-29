@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Over</title>
+  <link rel="stylesheet" href="css/global.css">
+  <!-- <link rel="stylesheet" href="css/game-over.css"> -->
+</head>
+<body>
+  <header>
+    <h1>Game Over</h1>
+  </header>
+  <main>
+    <p>The Thanos-level event meter has reached its limit. History has spiraled into chaos.</p>
+    <p>Try again to rewrite history and save the world!</p>
+    <button onclick="restartGame()">Restart Game</button>
+  </main>
+  <script>
+    function restartGame() {
+      sessionStorage.clear(); // Clear game progress
+      window.location.href = "index.html"; // Redirect to mission hub
+    }
+  </script>
+</body>
+</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Over</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/game-over.css">
+</head>
+<body>
+  <header>
+    <h1>Game Over</h1>
+  </header>
+  <main>
+    <p>The Thanos-level event meter has reached its limit. History has spiraled into chaos.</p>
+    <p>Try again to rewrite history and save the world!</p>
+    <button onclick="restartGame()">Restart Game</button>
+  </main>
+  <script>
+    function restartGame() {
+      sessionStorage.clear(); // Clear game progress
+      window.location.href = "index.html"; // Redirect to mission hub
+    }
+  </script>
+</body>
+</html>

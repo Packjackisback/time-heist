@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Heist Game</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <header>
+    <h1>Time Heist Game</h1>
+    <h3>By Jackson</h3>
+    <p>Pick a mission and rewrite history for the better!</p>
+  </header>
+  <section id="missions">
+  </section>
+  <script>
+   const missionsJSONPath = "assets/data/missions.json";
+
+    fetch(missionsJSONPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch missions: ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then(missions => {
+        const missionsContainer = document.getElementById("missions");
+
+        missions.forEach(mission => {
+          const missionDiv = document.createElement("div");
+          missionDiv.classList.add("mission");
+
+          missionDiv.innerHTML = `
+            <h2>${mission.name}</h2>
+            <p>${mission.briefing}</p>
+            <button onclick="startMission('${mission.id}')">Start Mission</button>
+          `;
+
+          missionsContainer.appendChild(missionDiv);
+        });
+      })
+      .catch(error => {
+        console.error("Error loading missions:", error);
+        alert("Failed to load missions. Please try again later.");
+      });
+
+    function startMission(missionId) {
+      sessionStorage.setItem("selectedMission", missionId);
+
+      window.location.href = "mission.html";
+    }
+  </script>
+</body>
+</html>
