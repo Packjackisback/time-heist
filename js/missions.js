@@ -438,12 +438,24 @@ function displayWinScreenForEvent(eventId) {
 
   const message = document.createElement("h1");
   message.textContent = `Congratulations! You have completed all missions for Event: ${eventId}`;
+  
   winScreen.appendChild(message);
 
   const restartButton = document.createElement("button");
   restartButton.textContent = "Restart Event";
   restartButton.style.marginTop = "20px";
   restartButton.onclick = () => restartEvent(eventId);
+  restartButton.setAttribute('href', "#");
+if(restartButton.addEventListener){
+   restartButton.addEventListener('click', function(){
+      restartEvent(eventId);
+   });
+}else if(restartButton.attachEvent){
+   restartButton.attachEvent('onclick', function(){
+      restartEvent(eventId);
+   });
+}
+
   winScreen.appendChild(restartButton);
 
   document.body.appendChild(winScreen);
