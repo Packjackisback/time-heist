@@ -448,7 +448,7 @@ function displayWinScreenForEvent(eventId) {
   restartButton.addEventListener('click', function(){
    restartEvent(eventId);
   });
-}
+
 
   winScreen.appendChild(restartButton);
 
