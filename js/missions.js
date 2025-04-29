@@ -445,15 +445,9 @@ function displayWinScreenForEvent(eventId) {
   restartButton.textContent = "Restart Event";
   restartButton.style.marginTop = "20px";
   restartButton.onclick = () => restartEvent(eventId);
-  restartButton.setAttribute('href', "#");
-if(restartButton.addEventListener){
-   restartButton.addEventListener('click', function(){
-      restartEvent(eventId);
-   });
-}else if(restartButton.attachEvent){
-   restartButton.attachEvent('onclick', function(){
-      restartEvent(eventId);
-   });
+  restartButton.addEventListener('click', function(){
+   restartEvent(eventId);
+  });
 }
 
   winScreen.appendChild(restartButton);
