@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const gridSize = 8; 
   const mineCount = 10; 
   const grid = document.getElementById("grid");
-  const restartButton = document.getElementById("restart");
 
   let cells = [];
   let gameOver = false;
@@ -169,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "mission.html";
   }
 
-  restartButton.addEventListener("click", initGame);
 
   initGame();
 });
