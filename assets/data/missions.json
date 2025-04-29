@@ -22,7 +22,7 @@
       {
         "id": "secure-trade",
         "description": "Secure trade agreements with Mongol leaders.",
-        "action": "intel-gathering",
+        "action": "minesweeper",
         "parameters": {
           "type": "search",
           "difficulty": "medium"
@@ -188,7 +188,7 @@
       {
         "id": "secure-resources",
         "description": "Secure critical resources to aid Constantinople's defenders.",
-        "action": "intel-gathering",
+        "action": "minesweeper",
         "parameters": {
           "type": "search",
           "difficulty": "medium"
@@ -249,7 +249,7 @@
       {
         "id": "promote-education",
         "description": "Promote widespread education to support modernization.",
-        "action": "intel-gathering",
+        "action": "minesweeper",
         "parameters": {
           "type": "research",
           "difficulty": "medium"
