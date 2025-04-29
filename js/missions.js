@@ -59,28 +59,34 @@ function updateActionButtons(mission) {
 
 
 function performAction(objective, mission) {
-  console.log(`Performing action for objective: ${objective.id}`);
-  const eventId = sessionStorage.getItem("selectedMission"); 
+    console.log(`Performing action for objective: ${objective.id}`);
+    const eventId = sessionStorage.getItem("selectedMission");
 
-  switch (objective.action) {
-    case "dialogue":
-      startDialogMinigame(objective.dialogue);
-      trackGameCompletionForEvent(eventId, "dialogue", true); 
-      break;
-    case "minesweeper":
-      window.location.href = "puzzle.html";
-      break;
-    case "intel-gathering":
-      startIntelGatheringMinigame(objective.parameters);
-      trackGameCompletionForEvent(eventId, "intel-gathering", true); 
-      break;
-    case "rescue":
-      startStealthMinigame();
-      trackGameCompletionForEvent(eventId, "stealth", true); 
-      break;
-    default:
-      console.error("Unknown action type:", objective.action);
-  }
+    switch (objective.action) {
+        case "dialogue":
+            startDialogMinigame(objective.dialogue);
+            trackGameCompletionForEvent(eventId, "dialogue", true);
+            completeObjective(mission.objectives.findIndex(obj => obj.id === objective.id)); // Complete the specific objective
+            checkMissionCompletion(mission); // Check if all objectives are done
+            break;
+        case "minesweeper":
+            window.location.href = "puzzle.html";
+            break;
+        case "intel-gathering":
+            startIntelGatheringMinigame(objective.parameters);
+            trackGameCompletionForEvent(eventId, "intel-gathering", true);
+            completeObjective(mission.objectives.findIndex(obj => obj.id === objective.id)); // Complete the specific objective
+            checkMissionCompletion(mission); // Check if all objectives are done
+            break;
+        case "rescue":
+            startStealthMinigame();
+            trackGameCompletionForEvent(eventId, "stealth", true);
+            completeObjective(mission.objectives.findIndex(obj => obj.id === objective.id)); // Complete the specific objective
+            checkMissionCompletion(mission); // Check if all objectives are done
+            break;
+        default:
+            console.error("Unknown action type:", objective.action);
+    }
 }
 
 
@@ -130,10 +136,10 @@ function handleAnswer(selectedIndex, correctAnswer, dialogueContainer) {
 }
 
 function completeObjective(objectiveIndex) {
-  const objectives = document.querySelectorAll("#objective-list li");
-  if (objectives[objectiveIndex]) {
-    objectives[objectiveIndex].classList.add("complete");
-  }
+    const objectives = document.querySelectorAll("#objective-list li");
+    if (objectives[objectiveIndex]) {
+        objectives[objectiveIndex].classList.add("complete");
+    }
 }
 
 function trackMinigameResult(minigameId, success) {
@@ -377,20 +383,20 @@ function checkCollision(player, enemy, goal, container) {
 
 
 const eventCompletionStatus = {};
+const missionCompletionStatus = {};
+
 
 function initializeEvent(eventId, modes) {
-  eventCompletionStatus[eventId] = {};
-  modes.forEach((mode) => {
-    eventCompletionStatus[eventId][mode] = false;
-  });
+    eventCompletionStatus[eventId] = {};
+    modes.forEach((mode) => {
+        eventCompletionStatus[eventId][mode] = false;
+    });
+    missionCompletionStatus[eventId] = {}; // Initialize mission completion
 }
 
 function trackGameCompletionForEvent(eventId, game, success) {
-  if (!success || !eventCompletionStatus[eventId]) return;
-
-  eventCompletionStatus[eventId][game] = true;
-
-  checkEventCompletion(eventId);
+    if (!success || !eventCompletionStatus[eventId]) return;
+    eventCompletionStatus[eventId][game] = true;
 }
 
 function checkEventCompletion(eventId) {
@@ -400,6 +406,17 @@ function checkEventCompletion(eventId) {
   if (allCompleted) {
     displayWinScreenForEvent(eventId);
   }
+}
+
+function checkMissionCompletion(mission) {
+    const allObjectivesComplete = mission.objectives.every((objective, index) => {
+        const objectiveLi = document.querySelector(`#objective-list li[data-index="${index}"]`);
+        return objectiveLi && objectiveLi.classList.contains("complete");
+    });
+
+    if (allObjectivesComplete) {
+        displayWinScreenForEvent(sessionStorage.getItem("selectedMission"));
+    }
 }
 
 function displayWinScreenForEvent(eventId) {
